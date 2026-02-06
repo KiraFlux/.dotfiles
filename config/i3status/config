@@ -1,0 +1,58 @@
+# ~/.config/i3status/config
+general {
+    colors = true
+    interval = 5
+    color_good = "#00F888"     # OK
+    color_degraded = "#FFFF00" # Жёлтый
+    color_bad = "#FF0000"      # Красный
+    separator = " | "          # Разделитель
+}
+
+# Порядок: CPU -> RAM -> Диск -> WiFi -> Батарея -> Время
+order += "cpu_usage"
+order += "memory"
+order += "disk /"
+order += "wireless _first_"
+order += "battery all"
+order += "volume master"
+order += "tztime local"
+
+# МОДУЛИ
+
+volume master {
+    format = "VOL: %volume"
+    format_muted = "VOL: Muted"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
+
+cpu_usage {
+    format = "CPU: %usage"    
+}
+
+memory {
+    format = "RAM: %used/%available"
+    threshold_degraded = "1G"
+    format_degraded = "RAM: %used/%available"
+}
+
+disk "/" {
+    format = "Disk: %avail"
+}
+
+wireless _first_ {
+    format_up = "%essid: %quality"     # Численное значение качества сигнала
+    format_down = "WiFi: down"
+}
+
+battery all {
+    format = "BAT: %percentage"
+    format_down = "AC"
+    path = "/sys/class/power_supply/BAT%d/uevent"
+    low_threshold = 15
+}
+
+tztime local {
+    format = "%Y.%m.%d %H:%M"
+}
