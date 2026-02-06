@@ -1,21 +1,24 @@
 #!/bin/bash
 
-echo "System setup..."
+echo "dotfiles setup..."
 
 # installing packages
-sudo pacman -S --needed $(cat pkglist.txt)
-yay -S --needed $(cat pkglist-yay.txt)
+sudo pacman -S --needed --noconfirm $(cat pkglist.txt)
+yay -S --needed --noconfirm $(cat pkglist-aur.txt)
+
+# Bash rc
+cp ./.bashrc ~/
 
 # Configs
 cp -r config/* ~/.config/
 
 # Scripts
-mkdir ~/bin
+mkdir -p ~/bin
 cp scripts/* ~/bin
 chmod +x ~/bin
 
-# Bash rc
-cp .bachrc ~/
+# Dirs
+mkdir -p ~/Repos
+mkdir -p ~/Images/Screenshots/
 
-echo "Done!"
-echo "Reload i3: 'Super+Shift+R'
+echo "Done! (Reload i3: Super+Shift+R)"

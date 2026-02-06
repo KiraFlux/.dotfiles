@@ -1,4 +1,3 @@
-animdustry
 mindustry-bin
 modrinth-app-bin
 orca-slicer-bin
