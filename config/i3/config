@@ -1,14 +1,13 @@
 # ~/.config/i3/config
 # Основные настройки
 set $mod Mod4
-set $scripts /home/kiraflux/bin
+set $scripts /home/kiraflux/.dotfiles/scripts
 font pango:monospace 10
 
 # Автозапуск
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- $scripts/lock.sh
 exec --no-startup-id nm-applet
-# exec --no-startup-id pulseaudio --start
 
 # Управление окнами
 floating_modifier $mod
@@ -34,6 +33,9 @@ bindsym $mod+Shift+e exec --no-startup-id i3-sensible-terminal -e mc
 
 bindsym $mod+d exec --no-startup-id dmenu_run -b
 bindsym $mod+space exec --no-startup-id $scripts/switch_layout.sh
+
+# lock
+bindsym $mod+l exec $scripts/lock.sh
 
 # Окна и контейнеры
 bindsym $mod+c kill
@@ -99,10 +101,12 @@ bindsym $mod+Shift+Print exec --no-startup-id $scripts/screenshot.sh area save
 # Режим изменения размера
 set $resize_step 10
 mode "resize" {
-    bindsym Left resize shrink width $resize_step px or $resize_step ppt
-    bindsym Down resize grow height $resize_step px or $resize_step ppt
-    bindsym Up resize shrink height $resize_step px or $resize_step ppt
-    bindsym Right resize grow width $resize_step px or $resize_step ppt
+    bindsym Left resize grow width $resize_step px or $resize_step ppt
+    bindsym Right resize shrink width $resize_step px or $resize_step ppt
+
+    bindsym Down resize shrink height $resize_step px or $resize_step ppt
+    bindsym Up resize grow height $resize_step px or $resize_step ppt
+
     bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym $mod+r mode "default"

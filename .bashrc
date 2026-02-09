@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.dotfiles/scripts:$PATH"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return

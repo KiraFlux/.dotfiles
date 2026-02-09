@@ -1,21 +1,19 @@
 #!/bin/bash
 
-echo "dotfiles setup..."
-
 # installing packages
 sudo pacman -S --needed --noconfirm $(cat pkglist.txt)
 yay -S --needed --noconfirm $(cat pkglist-aur.txt)
+
+echo "dotfiles setup..."
 
 # Bash rc
 cp ./.bashrc ~/
 
 # Configs
-cp -r config/* ~/.config/
+cp -r ./config/* ~/.config/
 
 # Scripts
-mkdir -p ~/bin
-cp scripts/* ~/bin
-chmod +x ~/bin
+chmod +x ./scripts
 
 # Dirs
 mkdir -p ~/Repos

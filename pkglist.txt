@@ -1,3 +1,8 @@
+xorg-xsetroot
+xss-lock
+xorg-xset
+scrot
+imagemagick
 7zip
 alacritty
 alsa-utils

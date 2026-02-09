@@ -3,4 +3,4 @@ modrinth-app-bin
 orca-slicer-bin
 visual-studio-code-bin
 yay
-yay-debug
+i3lock-color
