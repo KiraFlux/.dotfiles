@@ -1,6 +1,7 @@
+i3lock-color
 mindustry-bin
 modrinth-app-bin
 orca-slicer-bin
 visual-studio-code-bin
 yay
-i3lock-color
+yay-debug

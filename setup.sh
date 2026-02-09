@@ -1,10 +1,6 @@
 #!/bin/bash
 
-# installing packages
-sudo pacman -S --needed --noconfirm $(cat pkglist.txt)
-yay -S --needed --noconfirm $(cat pkglist-aur.txt)
-
-echo "dotfiles setup..."
+echo "Setup dotfiles..."
 
 # Bash rc
 cp ./.bashrc ~/

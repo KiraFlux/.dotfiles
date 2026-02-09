@@ -1,17 +1,16 @@
-xorg-xsetroot
-xss-lock
-xorg-xset
-scrot
-imagemagick
 7zip
 alacritty
 alsa-utils
 arduino-cli
 base
 base-devel
+blueman
+bluez
+bluez-utils
 brightnessctl
 btop
 dmenu
+dotnet-sdk-8.0
 dunst
 efibootmgr
 fastfetch
@@ -32,6 +31,7 @@ lightdm-gtk-greeter
 linux
 linux-firmware
 maim
+man-db
 mc
 mesa
 nano
@@ -45,7 +45,6 @@ python-setuptools
 reflector
 slop
 sudo
-thunar
 traceroute
 tree
 vulkan-intel
@@ -90,4 +89,5 @@ xorg-xsetroot
 xorg-xwayland
 xorg-xwd
 xorg-xwininfo
+xss-lock
 zig
