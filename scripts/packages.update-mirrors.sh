@@ -2,7 +2,7 @@
 
 set -e
 
-# Проверка на root
+# root check
 if [[ $EUID -ne 0 ]]; then
     echo "error: launch with sudo: sudo $0"
     exit 1

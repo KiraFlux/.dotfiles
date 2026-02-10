@@ -1,15 +1,12 @@
 #!/bin/bash
-# Основной скрипт скриншотов
 SCREENSHOT_DIR="$HOME/Images/Screenshots"
 
-# Функция для получения имени окна
 get_window_name() {
     xdotool getwindowfocus getwindowname 2>/dev/null | \
     sed 's/[\/:*?"<>|]/_/g' | \
     cut -c 1-50  # Ограничиваем длину имени
 }
 
-# Функция для формирования имени файла
 generate_filename() {
     local timestamp=$(date "+%Y.%m.%d-%H.%M.%S")
     local appname=$(get_window_name)
@@ -39,9 +36,9 @@ case "$1" in
         fi
         ;;
     *)
-        echo "Использование: $0 {active|full|area} [save]"
+        echo "usage: $0 {active|full|area} [save]"
         exit 1
         ;;
 esac
 
-notify-send -t 1000 -i "Скриншот сделан" "Сохранён в буфер${2:+ и в файл}"
+notify-send -t 1000 -i "Screenshot" "Saved into buffer${2:+ and file}"

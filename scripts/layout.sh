@@ -9,4 +9,4 @@ else
 fi
 
 setxkbmap -layout "$NEXT_LAYOUT"
-notify-send -t 800 -i '' "lang: $NEXT_LAYOUT"
+notify-send -t 800 -i '' "layout: $NEXT_LAYOUT"

@@ -9,7 +9,7 @@ cp ./.bashrc ~/
 cp -r ./config/* ~/.config/
 
 # Scripts
-chmod +x ./scripts
+chmod +x ./scripts/*
 
 # Dirs
 mkdir -p ~/Repos
